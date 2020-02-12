@@ -8,7 +8,13 @@ psql --host=postgres --username=me --dbname=testDb
 
 ## TypeORM
 
+### CLI
+
 ```
+# create simple app with typeorm
+typeorm init --name server --database postgres
+
+# create entity
 typeorm entity:create -n User
 ```
 
