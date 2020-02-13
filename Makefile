@@ -80,7 +80,7 @@ application:  ## <Helper> :: Executes into the application container.
 
 database: ## <Helper> :: Executes into database container.
 	@echo "Make: Shelling into local database container ..."
-	@docker-compose -f docker/docker-compose.yml exec postgres psql -U me -W 1234
+	@docker-compose -f docker/docker-compose.yml exec postgres psql -U me -W testDb
 
 help:  ## ** Display this help screen.
 	@grep -h -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

@@ -1,16 +1,51 @@
 # TypeORM + Postgres + Docker
 
+We use `Makefile` to easily have command.
+
 ## Docker
 
 ```
 psql --host=postgres --username=me --dbname=testDb
 ```
 
+## Build and Start
+
 ### Start the app
 
+First time:
+
 ```
-$ cd docker
-$ docker-compose up
+make local
+```
+
+Regular:
+
+```
+make local-dev
+```
+
+### Log
+
+After you start the app, you can run the following command to watch your app.
+
+```
+make log
+```
+
+### Database
+
+If you want to use `psql`, with password: `1234`.
+
+```
+make database
+```
+
+### App container
+
+If you want to go into app container with shell.
+
+```
+make application
 ```
 
 #### pgAdmin
