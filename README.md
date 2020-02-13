@@ -6,6 +6,18 @@
 psql --host=postgres --username=me --dbname=testDb
 ```
 
+### Start the app
+
+```
+$ cd docker
+$ docker-compose up
+```
+
+notice that when using docker, need to change database host to postgres container. (in `docker-compose.yml`)
+![](2020-02-13-13-45-38.png)
+
+![](2020-02-13-13-47-12.png)
+
 ## TypeORM
 
 ### CLI
