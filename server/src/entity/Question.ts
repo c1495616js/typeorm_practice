@@ -18,7 +18,7 @@ export class Question {
   @Column()
   text: string;
 
-  @ManyToMany(type => Category)
+  @ManyToMany(type => Category, { eager: false })
   @JoinTable()
   categories: Category[];
 }

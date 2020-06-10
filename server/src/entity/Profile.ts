@@ -3,7 +3,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   OneToOne,
-  JoinColumn
+  JoinColumn,
 } from "typeorm";
 import { User } from "./User";
 
@@ -18,7 +18,6 @@ export class Profile {
   @Column({ nullable: true })
   photo: string;
 
-  @OneToOne(type => User, { eager: true })
-  @JoinColumn()
+  @OneToOne((type) => User, (user) => user.profile)
   user: User;
 }

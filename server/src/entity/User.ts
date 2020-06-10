@@ -6,7 +6,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
-  JoinColumn
+  JoinColumn,
 } from "typeorm";
 import { Photo } from "./Photo";
 import { Profile } from "./Profile";
@@ -24,14 +24,10 @@ export class User {
   @UpdateDateColumn()
   update_dt: Date;
 
-  @OneToMany(
-    type => Photo,
-    photo => photo.user,
-    { eager: true }
-  )
+  @OneToMany((type) => Photo, (photo) => photo.user, { eager: true })
   photos: Photo[];
 
-  @OneToOne(type => Profile)
+  @OneToOne((type) => Profile, (profile) => profile.user)
   @JoinColumn()
   profile: Profile;
 }
